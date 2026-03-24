@@ -3,7 +3,7 @@ description: MINIMALIST CENTRAL BASE JSON
 baseurl: /neomello
 url: https://nettomello.github.io/neomello
 
-theme: hacked-terminal
+theme: minima
 cache_dir: .jekyll-cache-new
 
 exclude:
