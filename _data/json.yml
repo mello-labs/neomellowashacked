@@ -1,0 +1,50 @@
+- key: Name
+  value: NEØ MELLØ
+
+- key: Description
+  value:
+    - Arquiteto de ecossistemas digitais
+    - IA · Automação · Blockchain
+    - Infraestrutura descentralizada como linguagem de mercado
+  typed: true
+
+- key: Namespace
+  value:
+    - key: ENS
+      value: neomello.eth
+      url: https://app.ens.domains/neomello.eth
+    - key: DID
+      value: did:ens:neomello.eth
+
+- key: Proofs
+  value:
+    - key: GitHub
+      value: NEO-PROTOCOL
+      url: https://github.com/NEO-PROTOCOL
+
+- key: Ecosystem
+  value:
+    - key: NEØ PROTOCOL
+      value: Protocol Layer
+      url: https://neoprotocol.space
+    - key: NEØ FlowOFF
+      value: Agency Layer
+      url: https://neoflowoff.agency
+    - key: FlowPay
+      value: Payment Layer
+      url: https://flowpay.cash
+    - key: Nexus
+      value: Event Layer
+      url: https://nexus.neoprotocol.space
+
+- key: Reach
+  value:
+    - key: Email
+      value: neo@neoprotocol.space
+      url: "mailto:neo@neoprotocol.space"
+
+- key: Signal
+  value:
+    - Identity anchored on-chain
+    - Proof before persuasion
+    - Systems, not campaigns

@@ -1,0 +1,31 @@
+---
+---
+
+{% assign _bg    = site.color_bg    | default: 'gray-9'  %}
+{% assign _punct = site.color_punct | default: 'green-9' %}
+{% assign _key   = site.color_key   | default: 'green-4' %}
+{% assign _value = site.color_value | default: 'green-4' %}
+{% assign _hover = site.color_hover | default: 'green-5' %}
+
+$color_bg:    unquote("var(--oc-{{ _bg }})");
+$color_punct: unquote("var(--oc-{{ _punct }})");
+$color_key:   unquote("var(--oc-{{ _key }})");
+$color_value: unquote("var(--oc-{{ _value }})");
+$color_hover: unquote("var(--oc-{{ _hover }})");
+
+{% if site.lowercase == "keys" %}
+$transform_key:   lowercase;
+$transform_value: none;
+{% elsif site.lowercase == "values" %}
+$transform_key:   none;
+$transform_value: lowercase;
+{% elsif site.lowercase == false %}
+$transform_key:   none;
+$transform_value: none;
+{% else %}
+$transform_key:   lowercase;
+$transform_value: lowercase;
+{% endif %}
+
+@import "default";
+@import "custom";
