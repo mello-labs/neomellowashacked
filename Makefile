@@ -1,4 +1,6 @@
-.PHONY: install serve dev build clean update help audit
+.PHONY: all install serve dev build build-pages clean update help audit commit
+
+BASEURL ?= /neomello
 
 # Default target
 all: build
@@ -18,6 +20,10 @@ serve:
 build:
 	bundle exec jekyll build
 
+## build-pages: Builds the site using the GitHub Pages base path
+build-pages:
+	bundle exec jekyll build --baseurl "$(BASEURL)"
+
 ## clean: Removes the generated site and cached files
 clean:
 	bundle exec jekyll clean
@@ -28,7 +34,13 @@ update:
 
 ## audit: Checks for vulnerabilities in dependencies (requires bundler-audit)
 audit:
-	bundle audit check --update || echo "Install bundler-audit first: gem install bundler-audit"
+	@if bundle exec ruby -e "gem 'bundler-audit'" >/dev/null 2>&1; then \
+		bundle exec bundler-audit check --update; \
+	elif command -v bundler-audit >/dev/null 2>&1; then \
+		bundler-audit check --update; \
+	else \
+		echo "Install bundler-audit first: gem install bundler-audit"; \
+	fi
 
 ## help: Show this help message
 help:
@@ -37,7 +49,13 @@ help:
 ## commit: Commit e Push Seguro seguindo o Protocolo NΞØ
 commit:
 	@echo "🔍 Verificando segurança..."
-	@bundle audit check --update || (echo "⚠️ Aviso: bundler-audit não instalado ou falhou. Verifique as dependências." && exit 1)
+	@if bundle exec ruby -e "gem 'bundler-audit'" >/dev/null 2>&1; then \
+		bundle exec bundler-audit check --update; \
+	elif command -v bundler-audit >/dev/null 2>&1; then \
+		bundler-audit check --update; \
+	else \
+		echo "⚠️ Aviso: bundler-audit não instalado. Pulando auditoria local."; \
+	fi
 	@echo "🔨 Realizando build para validação..."
 	@bundle exec jekyll build
 	@echo "📝 Status do Git:"
