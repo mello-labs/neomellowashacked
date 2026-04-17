@@ -44,7 +44,8 @@ main {
 
 #json {
   white-space: pre-wrap;
-  word-break: break-all;
+  word-break: normal;
+  overflow-wrap: anywhere;
   line-height: 1.4;
   display: block;
 }
@@ -119,4 +120,38 @@ a.value:hover {
   0% { opacity: 0.95; transform: translateX(-1px); }
   50% { opacity: 1; transform: translateX(1px); }
   100% { opacity: 0.9; transform: translateX(0); }
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+
+  main {
+    margin: 1.2rem auto;
+    padding-top: calc(1.2rem + env(safe-area-inset-top, 0px));
+    padding-right: calc(4% + env(safe-area-inset-right, 0px));
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+    padding-left: calc(4% + env(safe-area-inset-left, 0px));
+  }
+
+  #terminal-header {
+    font-size: 0.72em;
+    margin-bottom: 1.2rem;
+  }
+
+  .ms {
+    margin-left: 0.95rem;
+    line-height: 1.35;
+  }
+
+  .row-block {
+    margin-top: 0.65rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .key,
+  .value {
+    text-transform: none;
+  }
 }
