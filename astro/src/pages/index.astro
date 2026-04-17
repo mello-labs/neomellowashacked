@@ -1,0 +1,139 @@
+---
+import fs from "node:fs";
+import yaml from "js-yaml";
+import "../styles/global.css";
+
+const raw = fs.readFileSync(new URL("../../../_data/json.yml", import.meta.url), "utf8");
+const profile = yaml.load(raw);
+const rows = Array.isArray(profile) ? profile : [];
+const base = "/neomellowashacked/";
+
+const quote = '"';
+---
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#080808" />
+    <title>NEØ MELLØ</title>
+    <link rel="icon" type="image/x-icon" href={`${base}assets/favicon.ico`} />
+    <link rel="apple-touch-icon" sizes="180x180" href={`${base}assets/apple-touch-icon.png`} />
+    <link rel="icon" type="image/png" sizes="32x32" href={`${base}assets/favicon-32x32.png`} />
+    <link rel="icon" type="image/png" sizes="16x16" href={`${base}assets/favicon-16x16.png`} />
+    <link rel="manifest" href={`${base}assets/site.webmanifest`} />
+    <link rel="stylesheet" href={`${base}assets/css/open-color.css`} />
+    <link rel="stylesheet" href={`${base}assets/css/normalize.css`} />
+  </head>
+  <body>
+    <main>
+      <div id="terminal-header">
+        Last login: {new Date().toLocaleString("en-US", { hour12: false })} on CHAIN // WEB 3.0<br />
+        neomello@mello-2:~$ cat profile.json
+      </div>
+
+      <div id="json">
+        {rows.map((pair, idx) => (
+          <div class="ms row-block is-hidden">
+            {pair?.typed ? (
+              <>
+                {quote}<span class="key">{pair.key}</span>{quote}:{" "}
+                {quote}<span class={`value ${pair.key === "Name" ? "value-flicker" : ""}`} id={`typed-${idx}`} data-typed={String(pair?.value ?? "")}></span>{quote}
+              </>
+            ) : Array.isArray(pair?.value) && pair.value.length > 0 && typeof pair.value[0] === "object" ? (
+              <>
+                {quote}<span class="key">{pair.key}</span>{quote}: {"{"}
+                {pair.value.map((item, i) => (
+                  <div class="ms">
+                    {quote}<span class="key">{item.key}</span>{quote}:{" "}
+                    {item.url ? (
+                      <>
+                        {quote}<a class="value" href={item.url} target="_self">{item.value}</a>{quote}
+                      </>
+                    ) : (
+                      <>
+                        {quote}<span class="value">{item.value}</span>{quote}
+                      </>
+                    )}
+                    {i < pair.value.length - 1 ? "," : ""}
+                  </div>
+                ))}
+                {"}"}
+              </>
+            ) : Array.isArray(pair?.value) ? (
+              <>
+                {quote}<span class="key">{pair.key}</span>{quote}: [
+                {pair.value.map((item, i) => (
+                  <div class="ms">
+                    {typeof item === "string" ? (
+                      <>
+                        {quote}<span class="value">{item}</span>{quote}
+                      </>
+                    ) : (
+                      <>
+                        {quote}<a class="value" href={item.url} target="_self">{item.value}</a>{quote}
+                      </>
+                    )}
+                    {i < pair.value.length - 1 ? "," : ""}
+                  </div>
+                ))}
+                ]
+              </>
+            ) : pair?.url ? (
+              <>
+                {quote}<span class="key">{pair.key}</span>{quote}:{" "}
+                {quote}<a class="value" href={pair.url} target="_self">{pair.value}</a>{quote}
+              </>
+            ) : (
+              <>
+                {quote}<span class="key">{pair.key}</span>{quote}:{" "}
+                {quote}<span class={`value ${pair.key === "Name" ? "value-flicker" : ""}`}>{pair.value}</span>{quote}
+              </>
+            )}
+            {idx < rows.length - 1 ? "," : ""}
+          </div>
+        ))}
+      </div>
+    </main>
+    <script is:inline src="/neomellowashacked/assets/js/typed.umd.js"></script>
+    <script is:inline>
+      const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+      const revealByBlock = async () => {
+        const blocks = Array.from(document.querySelectorAll(".row-block"));
+
+        for (const block of blocks) {
+          block.classList.remove("is-hidden");
+          block.classList.add("is-visible");
+
+          const typedNode = block.querySelector("[data-typed]");
+          const text = typedNode?.getAttribute("data-typed") || "";
+
+          if (typedNode && typedNode.id && text && window.Typed) {
+            await new Promise((resolve) => {
+              new window.Typed(`#${typedNode.id}`, {
+                strings: [text],
+                backSpeed: 10,
+                typeSpeed: 40,
+                backDelay: 1000,
+                loop: false,
+                cursorChar: "█",
+                smartBackspace: true,
+                onComplete: () => resolve()
+              });
+            });
+            await wait(120);
+          } else {
+            await wait(140);
+          }
+        }
+      };
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", revealByBlock);
+      } else {
+        revealByBlock();
+      }
+    </script>
+  </body>
+</html>

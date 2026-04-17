@@ -1,0 +1,122 @@
+@font-face {
+  font-family: "hack";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/neomellowashacked/assets/webfonts/hack-regular-subset.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "hack";
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400;
+  src: url("/neomellowashacked/assets/webfonts/hack-italic-subset.woff2") format("woff2");
+}
+
+body {
+  font-family: "hack", monospace;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #080808;
+  color: var(--oc-green-9, #2f9e44);
+  overflow-x: hidden;
+  position: relative;
+}
+
+main {
+  position: relative;
+  margin: 2rem auto;
+  padding: 2rem 5% 10rem 5%;
+  padding-top: calc(2rem + env(safe-area-inset-top, 0px));
+  padding-right: calc(5% + env(safe-area-inset-right, 0px));
+  padding-bottom: calc(10rem + env(safe-area-inset-bottom, 0px));
+  padding-left: calc(5% + env(safe-area-inset-left, 0px));
+  max-width: 900px;
+}
+
+#terminal-header {
+  opacity: 0.6;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+  font-size: 0.8em;
+}
+
+#json {
+  white-space: pre-wrap;
+  word-break: break-all;
+  line-height: 1.4;
+  display: block;
+}
+
+.ms {
+  margin-left: 1.5rem;
+  line-height: 1.5;
+}
+
+.row-block {
+  margin-top: 0.9rem;
+  margin-bottom: 0.9rem;
+}
+
+.row-block:first-child {
+  margin-top: 0;
+}
+
+.row-block.is-hidden {
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+.row-block.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 140ms ease, transform 140ms ease;
+}
+
+.key {
+  color: var(--oc-green-4, #8ce99a);
+  text-transform: lowercase;
+}
+
+.value {
+  color: var(--oc-green-4, #8ce99a);
+  text-transform: lowercase;
+}
+
+.mt {
+  margin-top: 1.5rem;
+}
+
+a.value {
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+  text-decoration: none;
+  color: #fff;
+  text-shadow:
+    2px 0 1px rgba(255, 0, 0, 0.5),
+    -2px 0 1px rgba(0, 0, 255, 0.5),
+    0 0 10px rgba(255, 255, 255, 0.8);
+  animation: flicker 0.1s infinite;
+}
+
+a.value:hover {
+  text-shadow:
+    2px 0 2px rgba(255, 0, 0, 0.65),
+    -2px 0 2px rgba(0, 0, 255, 0.65),
+    0 0 14px rgba(255, 255, 255, 0.95);
+}
+
+.value-flicker {
+  color: #fff;
+  text-shadow:
+    2px 0 1px rgba(255, 0, 0, 0.5),
+    -2px 0 1px rgba(0, 0, 255, 0.5),
+    0 0 10px rgba(255, 255, 255, 0.8);
+  animation: flicker 0.1s infinite;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.95; transform: translateX(-1px); }
+  50% { opacity: 1; transform: translateX(1px); }
+  100% { opacity: 0.9; transform: translateX(0); }
+}

@@ -12,8 +12,15 @@
 
 - **Produção:** [mello-labs.github.io/neomellowashacked](https://mello-labs.github.io/neomellowashacked/)
 - **Repositório:** [github.com/mello-labs/neomellowashacked](https://github.com/mello-labs/neomellowashacked)
+- **Stack atual:** Astro (Jekyll removido)
 
-O site é gerado com Jekyll; o deploy na branch `main` usa GitHub Actions (`.github/workflows/deploy.yml`) e GitHub Pages.
+O site é gerado com Astro em `astro/src/pages/index.astro`, usa dados de `_data/json.yml`, e faz deploy para GitHub Pages via `.github/workflows/deploy.yml`.
+
+## Desenvolvimento
+
+- Instalar dependências: `make install`
+- Rodar local: `make dev`
+- Build de produção: `make build`
 
 ```signature
 ─────────────────────++++++

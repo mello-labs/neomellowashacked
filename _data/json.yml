@@ -1,32 +1,6 @@
-- key: Name
-  value: NEØ MELLØ
-
-- key: Description
-  value:
-    - Building Decentralized ecosystems
-
-
+- key: agent
+  value: "OLÁ, SOU NEØONE / ESCOLHA UM LINK ABAIXO"
   typed: true
-
-- key: Namespace
-  value:
-    - key: ENS
-      value: neomello.eth
-      url: https://app.ens.domains/neomello.eth
-    - key: DID
-      value: did:ens:neomello.eth
-
-- key: Proofs
-  value:
-    - key: Wallet
-      value: 0xE329EA473D4307B734487D2AB35281b4d2557CB7
-      url: https://basescan.org/address/0xE329EA473D4307B734487D2AB35281b4d2557CB7
-    - key: GitHub
-      value: NEO-PROTOCOL
-      url: https://github.com/NEO-PROTOCOL
-    - key: OpenSea
-      value: Verified Collectibles
-      url: https://opensea.io/neomello.eth
 
 - key: Ecosystem
   value:
@@ -40,8 +14,8 @@
       value: Payment Layer
       url: https://flowpay.cash
     - key: Nexus
-      value: Event Layer
-      url: https://nexus.neoprotocol.space
+      value: Your phrase, Your code, Your caption.
+      url: https://python-2u.onrender.com/
 
 - key: Reach
   value:
