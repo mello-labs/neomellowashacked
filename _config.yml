@@ -3,7 +3,6 @@ description: MINIMALIST CENTRAL BASE JSON
 baseurl: /neomellowashacked
 url: https://mello-labs.github.io/neomellowashacked
 
-theme: hacked-terminal
 cache_dir: .jekyll-cache-new
 
 exclude:
