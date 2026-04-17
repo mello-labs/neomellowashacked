@@ -1,30 +1,81 @@
-- key: agent
-  value: "OLÁ, SOU NEØONE / ESCOLHA UM LINK ABAIXO"
+- key: Name
+  value: "NEØ MELLØ / ESCOLHA UM LINK ABAIXO"
   typed: true
+
+- key: Presence
+  value:
+    - key: ENS Surface
+      value: neomello.eth.limo
+      url: https://neomello.eth.limo/
+    - key: X
+      value: "@node_mello"
+      url: https://x.com/node_mello
+    - key: LinkedIn
+      value: /in/neomello
+      url: https://www.linkedin.com/in/neomello/
+    - key: Instagram
+      value: "@neonode.eth"
+      url: https://www.instagram.com/neonode.eth/
+
+- key: Payments Solution
+  value:
+    - key: FlowPay
+      value: Gateway PIX + Cripto
+      url: https://www.flowpay.cash/
+
+- key: Digital Mkt
+  value:
+    - key: Sites
+      value: neoflowoff.agency
+      url: https://sites.neoflowoff.agency/
+    - key: Landing Page
+      value: lp.neoflowoff.agency
+      url: https://lp.neoflowoff.agency/
 
 - key: Ecosystem
   value:
-    - key: NEØ PROTOCOL
-      value: Protocol Layer
-      url: https://neoprotocol.space
-    - key: NEØ FlowOFF
-      value: Agency Layer
-      url: https://neoflowoff.agency
-    - key: FlowPay
-      value: Payment Layer
-      url: https://flowpay.cash
-    - key: Nexus
-      value: Your phrase, Your code, Your caption.
+    - key: NEOFLW
+      value: Token Layer
+      url: https://neoflw.vercel.app/
+    - key: NS Factory
+      value: Smart Mint
+      url: https://nsfactory.xyz/
+
+- key: Gadgets
+  value:
+    - key: NeoConvert
+      value: PDF Tools
+      url: https://www.neo-convert.site/
+    - key: Python Message
+      value: Your phrase. Your code.
       url: https://python-2u.onrender.com/
+
+- key: Game / Dapp
+  value:
+    - key: Agent Flow
+      value: Simulacao de Escala
+      url: https://agenteflow.vercel.app/
+    - key: WOD[X] Landing
+      value: Coming Soon
+      url: https://wodx-landing.vercel.app/
+
+- key: Token
+  value:
+    - key: DEXTools
+      value: Pair Explorer
+      url: https://www.dextools.io/app/base/pair-explorer/0xba6f7f1d429c61e1714bd94a1c74414289fe52f1c14473ba005edfd042d3f014
+    - key: BaseScan
+      value: Contract + Code
+      url: "https://basescan.org/token/0x41f4ff3d45ded9c1332e4908f637b75fe83f5d6b#code"
+
+- key: "+18"
+  value:
+    - key: Paula Azevedo
+      value: Private Surface
+      url: https://paulaazevedo.vercel.app/
 
 - key: Reach
   value:
     - key: Email
       value: neo@neoprotocol.space
       url: "mailto:neo@neoprotocol.space"
-
-- key: Signal
-  value:
-    - Identity anchored on-chain
-    - Proof before persuasion
-    - Systems, not campaigns
