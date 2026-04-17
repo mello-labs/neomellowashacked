@@ -1,7 +1,7 @@
 title: NEØ MELLØ
 description: MINIMALIST CENTRAL BASE JSON
-baseurl: /neomello
-url: https://nettomello.github.io/neomello
+baseurl: /neomellowashacked
+url: https://mello-labs.github.io/neomellowashacked
 
 theme: hacked-terminal
 cache_dir: .jekyll-cache-new

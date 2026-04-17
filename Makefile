@@ -1,6 +1,6 @@
 .PHONY: all install serve dev build build-pages clean update help audit commit
 
-BASEURL ?= /neomello
+BASEURL ?= /neomellowashacked
 
 # Default target
 all: build
